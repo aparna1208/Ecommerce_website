@@ -13,7 +13,7 @@ from django.template.loader import render_to_string
 
 # Create your views here.
 
-
+# Paypal Payment Gateway
 def payments(request):
     body = json.loads(request.body)
     order = Order.objects.get(user = request.user, is_ordered = False, order_number = body['orderID'])
@@ -75,6 +75,7 @@ def payments(request):
     }
     return JsonResponse(data)
         
+
 
     # return render(request,'orders/payments.html')
 
